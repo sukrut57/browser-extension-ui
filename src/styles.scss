@@ -1,0 +1,142 @@
+@use 'bootstrap/scss/bootstrap';
+@use '@angular/material' as mat;
+
+
+// Define a custom neutral color palette
+$custom-neutral: (
+  0: hsl(200, 60%, 99%),  // Neutral 0
+  100: hsl(0, 0%, 93%),   // Neutral 100
+  200: hsl(217, 61%, 90%), // Neutral 200
+  300: hsl(0, 0%, 78%),   // Neutral 300
+  600: hsl(226, 11%, 37%), // Neutral 600
+  700: hsl(225, 23%, 24%), // Neutral 700
+  800: hsl(226, 25%, 17%), // Neutral 800
+  900: hsl(227, 75%, 14%), // Neutral 900
+  contrast: (
+    0: #000000, // Black text for light backgrounds
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    600: #ffffff, // White text for dark backgrounds
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+  )
+);
+
+
+// Define a dark theme
+$dark-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: mat.m2-define-palette($custom-neutral, 900),
+    accent: mat.m2-define-palette($custom-neutral, 600),
+    background: mat.m2-define-palette($custom-neutral, 900)
+  ),
+  // Only include `typography` and `density` in the default dark theme.
+  typography: mat.m2-define-typography-config(),
+  density: 0,
+));
+
+// Define a light theme
+$light-theme: mat.m2-define-light-theme((
+  color: (
+    primary: mat.m2-define-palette($custom-neutral, 200),
+    accent: mat.m2-define-palette($custom-neutral, 300),
+    background: mat.m2-define-palette($custom-neutral, 200)
+  ),
+));
+
+// Apply the dark theme by default
+@include mat.core-theme($dark-theme);
+@include mat.button-theme($dark-theme);
+
+// Apply the light theme only when the user prefers light themes.
+@media (prefers-color-scheme: light) {
+  // Use the `-color` mixins to only apply color styles without reapplying the same
+  // typography and density styles.
+  @include mat.core-color($light-theme);
+  @include mat.button-color($light-theme);
+}
+
+
+// ✅ Apply themes dynamically
+.light-theme {
+  @include mat.all-component-themes($light-theme);
+  background: hsl(200, 60%, 99%); // Light theme background
+}
+
+.dark-theme {
+  @include mat.all-component-themes($dark-theme);
+  background: hsl(227, 75%, 14%); // Dark theme background
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+/*
+
+What’s Good About Your Reset?
+✅ Box-sizing for all elements → Ensures consistent layout
+✅ Removes default margin → Avoids unwanted spacing
+✅ Improves accessibility & performance → Line-height & font-smoothing
+✅ Optimizes media elements → Ensures images/videos don’t overflow
+✅ Inherits fonts in form elements → Avoids inconsistent text styles
+✅ Prevents text overflow issues → Ensures readability
+✅ Root stacking context (isolation: isolate) → Helps avoid z-index issues*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+
+  background: hsl(227, 75%, 14%); // Dark theme background
+
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
