@@ -1,0 +1,15 @@
+<!--<button mat-raised-button color="primary" (click)="toggleTheme()">Toggle Theme</button>-->
+<mat-toolbar style="height: 60px" class="rounded-4 border toolbar">
+    <div class="d-flex justify-content-between align-items-center w-100">
+      @if(isDark){
+        <mat-icon svgIcon="logo-dark" style="width: 150px; height: 100px;" class="theme-icon"></mat-icon>
+
+      } @else {
+        <mat-icon svgIcon="logo-light" style="width: 150px; height: 100px;" class="theme-icon"></mat-icon>
+
+      }
+      <button (click)="toggleTheme()">ion</button>
+    </div>
+</mat-toolbar>
+
+
