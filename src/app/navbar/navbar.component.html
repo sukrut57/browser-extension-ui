@@ -2,13 +2,21 @@
 <mat-toolbar style="height: 60px" class="rounded-4 border toolbar">
     <div class="d-flex justify-content-between align-items-center w-100">
       @if(isDark){
-        <mat-icon svgIcon="logo-dark" style="width: 150px; height: 100px;" class="theme-icon"></mat-icon>
+        <mat-icon svgIcon="logo-dark" style="width: 150px; height: 100%;" class="theme-icon"></mat-icon>
 
       } @else {
         <mat-icon svgIcon="logo-light" style="width: 150px; height: 100px;" class="theme-icon"></mat-icon>
 
       }
-      <button (click)="toggleTheme()">ion</button>
+
+      <button style="background: none" class="d-flex align-items-center p-2 shadow border rounded-3 mat-button" (click)="toggleTheme()">
+        @if (isDark){
+          <mat-icon svgIcon="sun" class="theme-icon"></mat-icon>
+        } @else {
+          <mat-icon svgIcon="moon" class="theme-icon"></mat-icon>
+        }
+
+      </button>
     </div>
 </mat-toolbar>
 

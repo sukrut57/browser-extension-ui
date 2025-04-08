@@ -43,14 +43,7 @@ $light-theme: mat.m2-define-light-theme((
 ));
 
 // Apply the dark theme by default
-@include mat.all-component-themes($dark-theme);
-
-//default theme to mat-toolbar
-.mat-toolbar {
-  background-color: mat.m2-get-color-from-palette($custom-neutral, 700); // Adjust the color as desired
-  color: mat.m2-get-color-from-palette($custom-neutral,0); //Adjust the text color as desired
-}
-
+//@include mat.all-component-themes($dark-theme);
 
 // Apply the light theme only when the user prefers light themes.
 @media (prefers-color-scheme: light) {
@@ -61,6 +54,16 @@ $light-theme: mat.m2-define-light-theme((
 .light-theme {
   @include mat.all-component-themes($light-theme);
   background: mat.m2-get-color-from-palette($custom-neutral, 200); // Light theme background
+
+  // Override the Material toolbar background specifically
+  .mat-toolbar {
+    background-color: mat.m2-get-color-from-palette($custom-neutral, 100); // Adjust the color as desired
+  }
+
+  .mat-button{
+    background: mat.m2-get-color-from-palette($custom-neutral, 300) !important; // light theme background
+    border-color: mat.m2-get-color-from-palette($custom-neutral, 300) !important; // Adjust the color as desired
+  }
 }
 
 .dark-theme {
@@ -72,6 +75,12 @@ $light-theme: mat.m2-define-light-theme((
     background-color: mat.m2-get-color-from-palette($custom-neutral, 700); // Adjust the color as desired
     color: mat.m2-get-color-from-palette($custom-neutral,0); //Adjust the text color as desired
   }
+
+  .mat-button{
+    background: mat.m2-get-color-from-palette($custom-neutral, 600) !important; // Dark theme background
+    border-color: mat.m2-get-color-from-palette($custom-neutral, 600) !important; // Adjust the color as desired
+  }
+
 }
 
 /*
@@ -80,7 +89,7 @@ What’s Good About Your Reset?
 ✅ Box-sizing for all elements → Ensures consistent layout
 ✅ Removes default margin → Avoids unwanted spacing
 ✅ Improves accessibility & performance → Line-height & font-smoothing
-✅ Optimizes media elements → Ensures images/videos don’t overflow
+✅ Optimizes media elements → Ensures icons/videos don’t overflow
 ✅ Inherits fonts in form elements → Avoids inconsistent text styles
 ✅ Prevents text overflow issues → Ensures readability
 ✅ Root stacking context (isolation: isolate) → Helps avoid z-index issues*/
@@ -107,7 +116,6 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  background: hsl(227, 75%, 14%); // Dark theme background
 
 }
 
