@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { MatButton } from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIcon, MatIconRegistry} from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-navbar',
-  imports: [MatSlideToggleModule, MatButton, MatToolbarModule, MatIcon],
+  imports: [MatSlideToggleModule, MatToolbarModule, MatIcon],
   templateUrl: './navbar.component.html',
   standalone: true,
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  isDark = true;
+  darkModeEnabled = true;
 
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) {
@@ -36,10 +35,9 @@ export class NavbarComponent {
     );
   }
 
-
   toggleTheme() {
-    this.isDark = !this.isDark;
-    document.body.classList.toggle('dark-theme', this.isDark);
-    document.body.classList.toggle('light-theme', !this.isDark);
+    this.darkModeEnabled = !this.darkModeEnabled;
+    document.body.classList.toggle('dark-theme', this.darkModeEnabled);
+    document.body.classList.toggle('light-theme', !this.darkModeEnabled);
   }
 }

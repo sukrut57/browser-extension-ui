@@ -1,7 +1,7 @@
 <!--<button mat-raised-button color="primary" (click)="toggleTheme()">Toggle Theme</button>-->
-<mat-toolbar style="height: 60px" class="rounded-4 border toolbar">
+<mat-toolbar class="rounded-4 border toolbar">
     <div class="d-flex justify-content-between align-items-center w-100">
-      @if(isDark){
+      @if(darkModeEnabled){
         <mat-icon svgIcon="logo-dark" style="width: 150px; height: 100%;" class="theme-icon"></mat-icon>
 
       } @else {
@@ -9,8 +9,8 @@
 
       }
 
-      <button style="background: none" class="d-flex align-items-center p-2 shadow border rounded-3 mat-button" (click)="toggleTheme()">
-        @if (isDark){
+      <button style="background: none" class="d-flex align-items-center p-2 shadow border rounded-3 icon" (click)="toggleTheme()">
+        @if (darkModeEnabled){
           <mat-icon svgIcon="sun" class="theme-icon"></mat-icon>
         } @else {
           <mat-icon svgIcon="moon" class="theme-icon"></mat-icon>
