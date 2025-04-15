@@ -1,0 +1,17 @@
+@media (min-width:300px) and (max-width: 991px) {
+  .custom-col:nth-child(n) {
+    margin-top: 8px !important;
+
+  }
+
+}
+@media (min-width: 992px) {
+  .custom-col:nth-child(n) {
+    padding-right: 8px !important;
+    padding-left: 0 !important;
+    margin-top: 8px !important;
+  }
+  mat-card{
+    height: 145px;
+  }
+}

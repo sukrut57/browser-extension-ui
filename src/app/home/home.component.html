@@ -1,4 +1,4 @@
-<div class="mt-4">
+<div class="my-4">
   <div class="d-flex flex-column flex-md-row justify-content-md-between justify-content-center align-items-center gap-3">
 
     <p class="text-center theme-font fs-4 mb-0 fw-bold">Extensions List</p>
@@ -8,6 +8,37 @@
       <button mat-raised-button class="mat-button">Active</button>
       <button mat-raised-button class="mat-button">Inactive</button>
     </div>
+  </div>
+</div>
 
+<div class="container-fluid">
+  <div class="row"><!-- 👈 Add gutter spacing here -->
+    @for (extension of extensions; track $index){
+      <div class="col-sm-12 col-lg-4 custom-col">
+
+        <!--extension card-->
+          <mat-card appearance="outlined" class="card">
+            <mat-card-header>
+              <mat-card-title-group class="d-flex justify-content-start position-relative ">
+                <div class=" top-0 me-3">
+                  <img width="100px"  class="" src="{{extension.logo}}" alt="logo"/>
+                </div>
+                <div>
+                  <mat-card-title>{{extension.name}}</mat-card-title>
+                  <mat-card-subtitle style="font-size: 1rem">{{extension.description}}</mat-card-subtitle>
+                </div>
+
+              </mat-card-title-group>
+            </mat-card-header>
+            <!-- enable and remove icons -->
+            <mat-card-actions>
+
+            </mat-card-actions>
+
+          </mat-card>
+        <!---end of extension card-->
+
+      </div>
+    }
   </div>
 </div>

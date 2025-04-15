@@ -98,12 +98,14 @@ $light-theme: mat.m2-define-light-theme((
   --app-bg: linear-gradient(180deg, #040918 0%, #091540 100%);
   background: var(--app-bg) no-repeat fixed;
 
-  .mat-toolbar {
+  .mat-toolbar, .card {
     background-color: mat.m2-get-color-from-palette($custom-neutral, 700);
-    color: mat.m2-get-color-from-palette($custom-neutral,0);
+    color: mat.m2-get-color-from-palette($custom-neutral,100) !important;
     border-color: mat.m2-get-color-from-palette($custom-neutral, 800) !important;
     font-size: 1rem !important;
-
+  }
+  .card{
+    border-radius: 1rem !important;
   }
 
   .icon{
