@@ -3,7 +3,6 @@
     margin-top: 8px !important;
 
   }
-
 }
 @media (min-width: 992px) {
   .custom-col:nth-child(n) {
@@ -12,6 +11,38 @@
     margin-top: 8px !important;
   }
   mat-card{
-    height: 145px;
+    height: 200px;
   }
+}
+
+
+@media (min-width: 1100px) {
+  .custom-col:nth-child(n) {
+    padding-right: 8px !important;
+    padding-left: 0 !important;
+    margin-top: 8px !important;
+  }
+  mat-card{
+    height: 170px;
+  }
+}
+
+.logo-wrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-shrink: 0;
+}
+
+.extension-logo {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+
+:host ::ng-deep .mat-mdc-slide-toggle .mdc-switch__track::after{
+  background-color: red !important;
 }

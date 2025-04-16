@@ -12,28 +12,41 @@
 </div>
 
 <div class="container-fluid">
-  <div class="row"><!-- 👈 Add gutter spacing here -->
+  <div class="row g-3"><!-- Add gutter spacing with Bootstrap's g-3 class -->
     @for (extension of extensions; track $index){
       <div class="col-sm-12 col-lg-4 custom-col">
 
         <!--extension card-->
-          <mat-card appearance="outlined" class="card">
-            <mat-card-header>
-              <mat-card-title-group class="d-flex justify-content-start position-relative ">
-                <div class=" top-0 me-3">
-                  <img width="100px"  class="" src="{{extension.logo}}" alt="logo"/>
-                </div>
-                <div>
-                  <mat-card-title>{{extension.name}}</mat-card-title>
-                  <mat-card-subtitle style="font-size: 1rem">{{extension.description}}</mat-card-subtitle>
-                </div>
+          <mat-card appearance="outlined" class=" card">
 
-              </mat-card-title-group>
-            </mat-card-header>
-            <!-- enable and remove icons -->
-            <mat-card-actions>
+            <div class="d-flex flex-column justify-content-between h-100">
 
-            </mat-card-actions>
+              <mat-card-header>
+                <mat-card-title-group class="d-flex justify-content-start">
+
+                  <div class="logo-wrapper me-3">
+                    <img src="{{extension.logo}}" alt="{{extension.name}} logo" class="extension-logo" />
+                  </div>
+
+                  <div>
+                    <mat-card-title class="fw-bold">{{extension.name}}</mat-card-title>
+                    <mat-card-subtitle style="font-size: 1rem">{{extension.description}}</mat-card-subtitle>
+                  </div>
+
+                </mat-card-title-group>
+              </mat-card-header>
+
+              <!-- enable and remove icons -->
+              <mat-card-actions>
+                <div class="d-flex justify-content-between align-items-center w-100 ">
+                  <button mat-raised-button class="mat-button border">Remove</button>
+                  <mat-slide-toggle [(ngModel)]="extension.isActive" >
+
+                  </mat-slide-toggle>
+                </div>
+              </mat-card-actions>
+
+            </div>
 
           </mat-card>
         <!---end of extension card-->
