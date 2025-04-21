@@ -44,6 +44,20 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
+
+## Deploy the application to the server - Github pages
+Run `npm install -g angular-cli-ghpages` to install the angular-cli-ghpages package globally.
+
+Run  `ng build --base-href "https://{{github_profile}}.github.io/{{repo_name}}/"` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+RUN `npx  angular-cli-ghpages --dir=dist/{{repo_name}}/browser`
+
+If the above is not working, you can try the following command:
+
+This command will deploy the contents of the `dist/browser-extension-ui/browser` directory to the specified GitHub repository.
+
+RUN `npx angular-cli-ghpages --dir=dist/browser-extension-ui/browser --repo=https://github.com/sukrut57/browser-extension-ui.git`
+
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:

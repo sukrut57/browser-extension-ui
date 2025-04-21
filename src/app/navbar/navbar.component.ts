@@ -19,19 +19,19 @@ export class NavbarComponent {
 
    this.matIconRegistry.addSvgIcon(
      'logo-dark',
-     this.domSanitizer.bypassSecurityTrustResourceUrl('/icons/logo-dark-theme.svg')
+     this.domSanitizer.bypassSecurityTrustResourceUrl('icons/logo-dark-theme.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'logo-light',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('/icons/logo-light-theme.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('icons/logo-light-theme.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'sun',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('/icons/icon-sun.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('icons/icon-sun.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'moon',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('/icons/icon-moon.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('icons/icon-moon.svg')
     );
   }
 
