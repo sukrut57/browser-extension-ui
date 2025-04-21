@@ -25,7 +25,7 @@
     margin-top: 8px !important;
   }
   mat-card{
-    height: 170px;
+    height: 190px;
   }
 }
 
@@ -43,6 +43,7 @@
   max-height: 70%;
   object-fit: contain;
 }
+
 
 //:host ::ng-deep .mat-mdc-slide-toggle .mdc-switch__track::after{
 //  background-color: hsl(3, 86%, 64%) !important;

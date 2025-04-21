@@ -4,16 +4,17 @@
     <p class="text-center theme-font fs-4 mb-0 fw-bold">Extensions List</p>
 
     <div class="btn-group" role="group" aria-label="Extension Filter">
-      <button mat-raised-button class="mat-button">All</button>
-      <button mat-raised-button class="mat-button">Active</button>
-      <button mat-raised-button class="mat-button">Inactive</button>
+      <button mat-raised-button class="mat-button" (click)="filterExtensions('all')" [ngClass]="{'selected': selectedFilter === 'all'}">All</button>
+      <button mat-raised-button class="mat-button" (click)="filterExtensions('active')" [ngClass]="{'selected': selectedFilter === 'active'}">Active</button>
+      <button mat-raised-button class="mat-button" (click)="filterExtensions('inactive')" [ngClass]="{'selected': selectedFilter === 'inactive'}">Inactive</button>
     </div>
   </div>
 </div>
 
 <div class="container-fluid">
   <div class="row g-3"><!-- Add gutter spacing with Bootstrap's g-3 class -->
-    @for (extension of extensions; track $index){
+
+    @for (extension of filteredExtensions; track $index){
       <div class="col-sm-12 col-xl-4 custom-col">
 
         <!--extension card-->

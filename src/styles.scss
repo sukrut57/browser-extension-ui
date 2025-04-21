@@ -85,6 +85,11 @@ $light-theme: mat.m2-define-light-theme((
     color: mat.m2-get-color-from-palette($custom-neutral, 900) !important;
     font-family: "Noto Sans", sans-serif !important;
 
+    &:focus{
+      border: 1px solid mat.m2-get-color-from-palette($button-color, 500) !important;
+      box-shadow: inset 0 0 0 2px mat.m2-get-color-from-palette($custom-neutral, 100) !important;
+    }
+
   }
 
   .theme-font{
@@ -110,8 +115,14 @@ $light-theme: mat.m2-define-light-theme((
     border: 1px solid mat.m2-get-color-from-palette($custom-neutral,100) !important;
     background-color:  hsl(200, 60%, 99%) !important;
     border-radius: 1rem !important;
-
   }
+
+
+  .selected {
+    background-color: mat.m2-get-color-from-palette($button-color,700) !important;
+    color: mat.m2-get-color-from-palette($custom-neutral, 100) !important;
+  }
+
 
 }
 
@@ -143,7 +154,13 @@ $light-theme: mat.m2-define-light-theme((
     border-radius: 1.25rem !important;
     font-family: "Noto Sans", sans-serif !important;
     font-size: 1rem !important;
+
+    &:focus{
+      border: 1px solid mat.m2-get-color-from-palette($button-color, 500) !important;
+      box-shadow: inset 0 0 0 2px mat.m2-get-color-from-palette($custom-neutral, 900) !important;
+    }
   }
+
 
   .theme-font{
     color: mat.m2-get-color-from-palette($custom-neutral, 100) !important;
@@ -173,6 +190,10 @@ $light-theme: mat.m2-define-light-theme((
 
   }
 
+  .selected {
+    background-color: mat.m2-get-color-from-palette($button-color,700) !important;
+    color: mat.m2-get-color-from-palette($custom-neutral, 900) !important;
+  }
 
 }
 
