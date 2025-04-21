@@ -90,6 +90,29 @@ $light-theme: mat.m2-define-light-theme((
   .theme-font{
     color: mat.m2-get-color-from-palette($custom-neutral, 900) !important;
   }
+
+  // ---------------------------------------------
+  .mat-mdc-slide-toggle .mdc-switch__track::after{
+    background-color: mat.m2-get-color-from-palette($button-color, 500) !important;
+  }
+
+  .mat-mdc-slide-toggle .mdc-switch__track::before{
+    background-color: mat.m2-get-color-from-palette($custom-neutral, 100) !important;
+  }
+
+  .mat-mdc-slide-toggle .mdc-switch__icons{
+    border: 1px solid mat.m2-get-color-from-palette($button-color, 500) !important;
+    background-color: mat.m2-get-color-from-palette($custom-neutral, 100) !important;
+    border-radius: 1rem !important;
+  }
+
+  .mat-mdc-slide-toggle .mdc-switch--unselected .mdc-switch__icons {
+    border: 1px solid mat.m2-get-color-from-palette($custom-neutral,100) !important;
+    background-color:  hsl(200, 60%, 99%) !important;
+    border-radius: 1rem !important;
+
+  }
+
 }
 
 .dark-theme {
@@ -125,6 +148,31 @@ $light-theme: mat.m2-define-light-theme((
   .theme-font{
     color: mat.m2-get-color-from-palette($custom-neutral, 100) !important;
   }
+
+  // ---------------------------------------------
+
+  // ---------------------------------------------
+  .mat-mdc-slide-toggle .mdc-switch__track::after{
+    background-color: mat.m2-get-color-from-palette($button-color, 400) !important;
+  }
+
+  .mat-mdc-slide-toggle .mdc-switch__track::before{
+    background-color: mat.m2-get-color-from-palette($custom-neutral, 600) !important;
+  }
+
+  .mat-mdc-slide-toggle .mdc-switch__icons{
+    border: 1px solid mat.m2-get-color-from-palette($button-color, 500) !important;
+    background-color: hsl(200, 60%, 99%) !important;
+    border-radius: 1rem !important;
+  }
+
+  .mat-mdc-slide-toggle .mdc-switch--unselected .mdc-switch__icons {
+    border: 1px solid mat.m2-get-color-from-palette($custom-neutral,100) !important;
+    background-color:  hsl(200, 60%, 99%) !important;
+    border-radius: 1rem !important;
+
+  }
+
 
 }
 
