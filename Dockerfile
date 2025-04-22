@@ -1,5 +1,5 @@
 #Stage 1: build the angular app
-FROM node:18.16.0-alpine3.18 AS builder
+FROM node:18.19-alpine3.17 AS builder
 LABEL authors="sukrut k pasumarthi"
 WORKDIR /app
 COPY package*.json ./
