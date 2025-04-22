@@ -9,7 +9,7 @@ RUN npm run build --prod
 
 # stage 2: serve the app with nginx server
 FROM nginx:1.25.2-alpine
-COPY --from=builder /app/dist/browser-extension-ui /usr/share/nginx/html
+COPY --from=builder /app/dist/browser-extension-ui/browser /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
