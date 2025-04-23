@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  angular19-app:
+    container_name: angular19-app
+    image: sukrut5793/angular19-app:latest
+    ports:
+      - "9090:80"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - angular-network
+
+networks:
+  angular-network:
+    driver: bridge
